@@ -1,17 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <DynamicRenderer
+    :typeSchema="typeSchema"
+    :data="data"
+    @input="updateData($event)"
+  />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DynamicRenderer from "./components/DynamicRenderer.vue";
+import { typeSchema } from "./constants/schema";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    DynamicRenderer,
+  },
+  emits: ["input"],
+  data() {
+    return {
+      typeSchema: typeSchema,
+      data: {},
+    };
+  },
+  methods: {
+    updateData({ state, value }) {
+      this.data[state] = value;
+    },
+  },
+};
 </script>
 
 <style>
@@ -22,5 +38,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background: #f5f7f9;
+  height: 100%;
 }
 </style>
