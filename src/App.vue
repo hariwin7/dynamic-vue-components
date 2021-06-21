@@ -25,6 +25,7 @@ export default {
   methods: {
     updateData({ state, value }) {
       this.data[state] = value;
+      console.log(this.data);
     },
   },
 };

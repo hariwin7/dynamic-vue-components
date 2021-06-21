@@ -1,11 +1,12 @@
 export const typeSchema = [
-  { label: "Dog Name", type: "Input", state: "dogName" },
+  { label: "First Name", type: "Input", state: "firstName" },
+  { label: "Last Name", type: "Input", state: "lastName" },
+  { label: "Email *", type: "Input", state: "email" },
   {
-    label: "Select Dog Type",
+    label: "Select Gender",
     type: "SelectList",
-    state: "dogType",
-    options: ["cute", "aggressive", "skinny"],
+    state: "gender",
+    options: ["Male", "Female", "Others"],
   },
-  { label: "This is your dog", type: "TextDisplay", state: "dogName" },
-  { label: "And he is", type: "TextDisplay", state: "dogType" },
+  { label: "Welcome Mr", type: "TextDisplay", state: "firstName" },
 ];
